@@ -1,0 +1,76 @@
+<package>
+
+  <!-- NOTE: This is a catkin package.xml file to support optional building in
+       a catkin workspace, but is not required to build gazebo. For more
+       information, see: http://ros.org/reps/rep-0134.html -->
+
+  <name>gazebo</name>
+  <version>0.0.0</version>
+  <description>
+    This is the Gazebo simulator.  Gazebo simulates multiple robots in a
+    3D environment, with extensive dynamic interaction between objects. 
+  </description>
+  <license>Apache2</license>
+  <author>Open Source Robotics Foundation</author>
+
+  <maintainer email="nate@osrfoundation.org">Nate Koenig</maintainer>
+  <maintainer email="hsu@osrfoundation.org">John Hsu</maintainer>
+
+  <url>http://gazebosim.org/</url>
+
+  <buildtool_depend>cmake</buildtool_depend>
+  <buildtool_depend>pkg-config</buildtool_depend>
+
+  <build_depend>bullet</build_depend>
+    <run_depend>bullet</run_depend>
+
+    <run_depend>catkin</run_depend>
+
+  <build_depend>curl</build_depend>
+    <run_depend>curl</run_depend>
+
+  <build_depend>dart</build_depend>
+    <run_depend>dart</run_depend>
+
+  <build_depend>freeimage</build_depend>
+    <run_depend>freeimage</run_depend>
+
+  <build_depend>ign-math</build_depend>
+    <run_depend>ign-math</run_depend>
+
+  <build_depend>ign-transport</build_depend>
+    <run_depend>ign-transport</run_depend>
+
+  <build_depend>libogre-dev</build_depend>
+    <run_depend>libogre-dev</run_depend>
+
+  <build_depend>libqt4-dev</build_depend>
+    <run_depend>libqt4-dev</run_depend>
+
+  <build_depend>libqt4-opengl-dev</build_depend>
+    <run_depend>libqt4-opengl-dev</run_depend>
+
+  <build_depend>protobuf-dev</build_depend>
+    <run_depend>protobuf-dev</run_depend>
+
+  <build_depend>sdformat</build_depend>
+    <run_depend>sdformat</run_depend>
+
+  <build_depend>simbody</build_depend>
+    <run_depend>simbody</run_depend>
+
+  <build_depend>tar</build_depend>
+    <run_depend>tar</run_depend>
+
+  <build_depend>tbb</build_depend>
+    <run_depend>tbb</run_depend>
+
+  <build_depend>tinyxml</build_depend>
+    <run_depend>tinyxml</run_depend>
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+
+</package>
+

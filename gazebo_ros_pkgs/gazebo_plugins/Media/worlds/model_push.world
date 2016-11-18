@@ -1,0 +1,58 @@
+<?xml version="1.0"?> 
+<sdf version="1.4">
+  <world name="default">
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <model name="box">
+
+      <gravity>0</gravity>
+      <kinematic>0</kinematic>
+      <pose>5 0 0 0 0 0</pose>
+      <inertial>
+	<frame name="plane"/>
+	<mass> 1 </mass>
+	<inertia> <ixx>1.0</ixx> <ixy>0.0</ixy> <ixz>0.0</ixz> 
+	          <iyy>1.0</iyy> <iyz>0.0</iyz> 
+		  <izz>1.0</izz>
+        </inertia>
+      </inertial>
+
+
+      <link name="link">
+
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>.2 .2 .2</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+
+          <geometry>
+           
+	      <box>
+
+              <size>.01 .01 .01</size>
+
+           </box>
+        
+	  </geometry>
+
+	  <plugin name="visual_plugin" filename="libgazebo_soft_body_visual.so"/>
+        </visual>
+      </link>
+
+      <plugin name="model_push" filename="libgazebo_soft_body_model.so"/>
+    </model>        
+  </world>
+</sdf>

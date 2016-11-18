@@ -1,0 +1,44 @@
+<package>
+
+  <!-- NOTE: This is a catkin package.xml file to support optional building in
+       a catkin workspace, but is not required to build sdformat. For more
+       information, see: http://ros.org/reps/rep-0134.html -->
+
+  <name>sdformat</name>
+  <version>0.0.0</version>
+  <description>
+    This is the Simulation Description Format (sdformat), which is used by the
+    Gazebo simulator. A world file contains a description of the world, and a
+    model file contains a description of a physical entity in the world.
+  </description>
+  <license>Apache2</license>
+  <author>Open Source Robotics Foundation</author>
+
+  <maintainer email="nate@osrfoundation.org">Nate Koenig</maintainer>
+  <maintainer email="hsu@osrfoundation.org">John Hsu</maintainer>
+
+  <url>http://gazebosim.org/sdf/</url>
+
+  <buildtool_depend>cmake</buildtool_depend>
+  <buildtool_depend>pkg-config</buildtool_depend>
+
+  <build_depend>boost</build_depend>
+    <run_depend>boost</run_depend>
+
+    <run_depend>catkin</run_depend>
+
+  <build_depend>ign-math</build_depend>
+    <run_depend>ign-math</run_depend>
+
+  <build_depend>tinyxml</build_depend>
+    <run_depend>tinyxml</run_depend>
+
+  <build_depend>urdfdom</build_depend>
+    <run_depend>urdfdom</run_depend>
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+
+</package>
+

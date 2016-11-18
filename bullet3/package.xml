@@ -1,0 +1,26 @@
+<package>
+
+  <!-- NOTE: This is a catkin package.xml file to support optional building in
+       a catkin workspace, but is not required to build bullet. For more
+       information, see: http://ros.org/reps/rep-0134.html -->
+
+  <name>bullet</name>
+  <version>0.0.0</version>
+  <description>
+    Bullet is a professional free 3D Game Multiphysics Library.
+  </description>
+  <license>Apache2</license>
+  <author>Open Source Robotics Foundation</author>
+
+  <maintainer email="erwin.coumans@gmail.com">Erwin Coumans</maintainer>
+
+  <url>http://code.google.com/p/bullet</url>
+
+  <buildtool_depend>cmake</buildtool_depend>
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+
+</package>
+
