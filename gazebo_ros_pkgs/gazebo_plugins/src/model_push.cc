@@ -159,27 +159,35 @@ namespace gazebo
       }
       ffs.close();
       */
-      btSoftBody* psb =  btSoftBodyHelpers::CreateFromTriMesh(*m_softBodyWorldInfo,
-							      vertices,
-							      faces,
-							      fcnt );
+      btSoftBody* psb=btSoftBodyHelpers::CreateFromTriMesh(*m_softBodyWorldInfo,
+							   vertices,
+							   faces,
+							   fcnt );
 
       //min distance allowed between softbody and other objects. 
       psb->getCollisionShape()->setMargin(0.001);
-      psb->setTotalMass(1, true);
-      
+      //psb->setTotalMass(0.001, true);
+      //psb->setPose( true, false );
+
       //btSoftBody::Material* pm=psb->appendMaterial();
       btSoftBody::Material* pm=psb->m_materials[0];
-      pm->m_kLST                              =       1;
-      //pm->m_kAST                              =       0.001;
-      //pm->m_kVST                              =       0.001;
-      //pm->m_flags                             -=      btSoftBody::fMaterial::DebugDraw;
+      pm->m_kLST                              =       1.0;
+      //b->m_cfg.kPR = 0.01;
+      pm->m_kAST                              =       1.0;
+      pm->m_kVST                              =       1.0;
+      pm->m_flags            -=      btSoftBody::fMaterial::DebugDraw;
+      psb->generateBendingConstraints(5, pm);
       //std::cout << "Klst: " << pm->m_kLST << std::endl;
       //std::cout << pm << std::endl;
 
-      psb->setTotalMass(0.001);
-      for( int i=0; i<psb->m_nodes.size()/10; i++ )
-	psb->setMass( i, 0.0 );
+      //psb->setTotalMass(0.001);
+      for( int i=0; i<psb->m_nodes.size(); i++ ){
+	if( psb->m_nodes[i].m_x.getY() < -0.24 || 
+	    psb->m_nodes[i].m_x.getY() > 0.24 )
+	  psb->setMass( i, 0.0 );
+	else
+	  psb->setMass( i, 0.000001 );
+      }
 
       //psb->updateConstants();
       //uses the bullet link to access the physics engine, allowing our new soft body to enter the world

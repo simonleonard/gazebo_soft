@@ -147,11 +147,11 @@ namespace gazebo
     float vertices[vbufCount];
     for( int i=0; i<nVertices; i++ ){
       float x, y, z;
-      vfs >> x >> z >> y;	
+      vfs >> x >> y >> z;	
       vertices[i*6+0] = x;
       vertices[i*6+1] = y;
       vertices[i*6+2] = z+0.3;
-      
+
       //nfs >> x >> y >> z;	
       //float d = sqrt( x*x + y*y + z*z );
       vertices[i*6+3] = cos( atan2( z, x ) );
